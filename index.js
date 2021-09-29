@@ -6,15 +6,15 @@ const mazeGenerate = (S) => {
   let output = "";
   let isLeft = true;
 
-  const pagar = "@".repeat(S - 1);
+  const wall = "@".repeat(S - 3);
   for (let h = 1; h <= S; h++) {
     output += "@"
     if (h % 2 === 1 && isLeft) {
-      output += " " + pagar
+      output += " " + wall
     } else if (h % 2 === 1 && !isLeft) {
-      output += pagar + " "
+      output += wall + " "
     } else {
-      output += " ".repeat(S)
+      output += " ".repeat(S - 2)
       isLeft = !isLeft
     }
     output += "@"
